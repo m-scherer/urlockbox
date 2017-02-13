@@ -8,7 +8,10 @@ class LinksController < ApplicationController
   def create
     link = Link.new(link_params)
     link.user = current_user
-    if link.save
+    if !link.valid_url?
+      flash[:danger] = "Please provide a valid url"
+      redirect_to links_path
+    elsif link.save
       flash[:success] = "Successfully created #{link.title}"
       redirect_to links_path
     else
