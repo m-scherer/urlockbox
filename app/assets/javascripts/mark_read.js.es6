@@ -7,7 +7,7 @@ function markAsRead(e) {
 
   var $link = $(this).parents('.link');
   var linkId = $link.data('link-id');
-
+debugger;
   $.ajax({
     type: "PATCH",
     url: "/api/v1/links/" + linkId,

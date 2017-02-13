@@ -6,4 +6,8 @@ class Link < ActiveRecord::Base
     uri.is_a?(URI::HTTP) && !uri.host.nil?
   end
 
+  def update_attributes(attributes)
+    self.update(attributes)
+  end
+
 end

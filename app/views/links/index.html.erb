@@ -10,9 +10,10 @@
 <h1>All Links</h1>
 
 <% @links.each do |link| %>
-<ul>
+<ul class= "link" data-link-id='<%= link.id %>'>
   <li><%= link.title %></li>
   <li><%= link.url %></li>
   <li><%= link.read %></li>
+  <button name="mark-as-read" class="mark-as-read">Mark as Read</button>
 </ul>
 <% end %>
