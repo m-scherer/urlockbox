@@ -8,7 +8,10 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if user.save
+    if User.find_by(email: user_params[:email])
+      flash[:success] = "Please enter a unique email"
+      redirect_to new_user_path
+    elsif user.save
       flash[:success] = "#{user.email} created successfully!"
       redirect_to root_path
     else
