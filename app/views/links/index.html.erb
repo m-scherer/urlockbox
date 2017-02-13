@@ -1,0 +1,10 @@
+<h1>Create Links</h1>
+<%= form_for @link do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <%= f.submit %>
+<% end %>
+
+<h1>All Links</h1>

@@ -6,8 +6,8 @@ RSpec.describe "As a user" do
      link = create(:link)
      visit root_path
 
-     fill_in :title, with: link.title
-     fill_in :title, with: link.url
+     fill_in :link_title, with: link.title
+     fill_in :link_url, with: link.url
      click_on "Create Link"
 
      expect(current_path).to eq(links_path)

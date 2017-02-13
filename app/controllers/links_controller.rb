@@ -1,11 +1,12 @@
 class LinksController < ApplicationController
 
   def index
-    @links = current_user.links
+    @link = Link.new
+    # @links = current_user.links
   end
 
-  def method_name
-
+  def create
+    require "pry"; binding.pry
   end
 
 end

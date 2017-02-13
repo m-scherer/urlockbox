@@ -1,5 +1,5 @@
 class RemoveUserFromLinks < ActiveRecord::Migration[5.0]
   def change
-    remove_column :links, :user, :integer
+    remove_column :links, :user_id, :integer
   end
 end
