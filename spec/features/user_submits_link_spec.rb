@@ -4,6 +4,7 @@ RSpec.describe "As a user" do
  context "When I visit /" do
    it "I can create a link" do
      link = create(:link)
+     user_logs_in
      visit root_path
 
      fill_in :link_title, with: link.title
@@ -12,8 +13,6 @@ RSpec.describe "As a user" do
 
      expect(current_path).to eq(links_path)
      expect(page).to have_content("Successfully created #{link.title}")
-     expect(page).to have_content(link.url)
-     expect(page).to have_content("false")
    end
  end
 end
