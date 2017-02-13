@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "As a guest" do
-  context "When I visit /user/new" do
+  context "When I visit /users/new" do
     it "I can create an account" do
       user = User.new(email: 'test@example.com', password_digest: 'test')
       visit new_user_path

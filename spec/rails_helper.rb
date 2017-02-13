@@ -29,6 +29,11 @@ Capybara.javascript_driver = :poltergeist
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+  def user_logs_in
+    user = User.new(email: 'test@example.com', password_digest: 'test')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user) 
+  end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
