@@ -31,7 +31,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
   def user_logs_in
     user = User.new(email: 'test@example.com', password_digest: 'test')
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user) 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
   end
 
 RSpec.configure do |config|

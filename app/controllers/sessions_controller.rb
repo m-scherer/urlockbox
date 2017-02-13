@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  skip_before_filter :logged_in?, only: [:new, :create]
+  skip_before_action :logged_in?, only: [:new, :create]
 
   def new
   end
@@ -14,6 +14,12 @@ class SessionsController < ApplicationController
       flash[:danger] = 'User not found'
       redirect_to login_path
     end
+  end
+
+  def destroy
+    session.clear
+    flash[:success] = 'Logged Out Successfully'
+    redirect_to login_path
   end
 
 end

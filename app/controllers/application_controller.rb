@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  before_filter :logged_in?
+  before_action :logged_in?
 
   def logged_in?
     redirect_to '/login' if !current_user
